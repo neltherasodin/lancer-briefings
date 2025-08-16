@@ -73,7 +73,7 @@ select {
 	}
 }
 
-.o-modal__content{
+.o-modal__content {
 	overflow: visible;
 	position: static;
 	background-color: inherit;

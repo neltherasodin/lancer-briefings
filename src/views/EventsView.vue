@@ -1,5 +1,10 @@
 <template>
-	<div id="eventsView" :class="{ animate: animateView }" :style="{ 'animation-delay': animationDelay }" class="content-container">
+	<div
+		id="eventsView"
+		:class="{ animate: animateView }"
+		:style="{ 'animation-delay': animationDelay }"
+		class="content-container"
+	>
 		<section id="events" :class="{ animate: animate }" class="section-container">
 			<div class="section-header clipped-medium-backward">
 				<img src="/icons/clockwork.svg" />
@@ -12,7 +17,8 @@
 						:key="item.title"
 						:event="item"
 						:animate="animate"
-						@select-event="selectEvent(item)" />
+						@select-event="selectEvent(item)"
+					/>
 				</div>
 			</div>
 		</section>
@@ -38,7 +44,7 @@
 </template>
 
 <script>
-import { VueMarkdownIt } from '@f3ve/vue-markdown-it';
+import { VueMarkdownIt } from "@f3ve/vue-markdown-it";
 import Event from "@/components/Event.vue";
 
 export default {
@@ -58,15 +64,15 @@ export default {
 	},
 	data() {
 		return {
-			selectedEvent:{
+			selectedEvent: {
 				type: Object,
-			}
+			},
 		};
 	},
 	methods: {
 		selectEvent(event) {
 			this.selectedEvent = event;
-		}
-	}
+		},
+	},
 };
 </script>

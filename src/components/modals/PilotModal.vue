@@ -8,7 +8,7 @@
 			<div class="rhombus-back">&nbsp;</div>
 		</div>
 		<div class="pilot markdown">
-			<div v-html="getHistory()"/>
+			<div v-html="getHistory()" />
 		</div>
 	</div>
 	<div class="pilot-modal portrait">
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { VueMarkdownIt } from '@f3ve/vue-markdown-it';
+import { VueMarkdownIt } from "@f3ve/vue-markdown-it";
 
 export default {
 	components: {
@@ -45,33 +45,33 @@ export default {
 		};
 	},
 	computed: {
-    pilotPortrait() {
-      return `/pilots/${this.pilot.callsign.toUpperCase()}.webp`
-    },
-    mechPortrait() {
-      return `/mechs/${this.pilot.callsign}.webp`
-    },
+		pilotPortrait() {
+			return `/pilots/${this.pilot.callsign.toUpperCase()}.webp`;
+		},
+		mechPortrait() {
+			return `/mechs/${this.pilot.callsign}.webp`;
+		},
 	},
 	methods: {
-		getHistory(){
-			if (this.pilot.history === ""){
-				return `<p> <h2> [ERR: REDACTED] </h2> </p>`
+		getHistory() {
+			if (this.pilot.history === "") {
+				return `<p> <h2> [ERR: REDACTED] </h2> </p>`;
 			}
 
-			let response = "<p>"
-			
-			if (this.pilot.text_appearance !== ""){
+			let response = "<p>";
+
+			if (this.pilot.text_appearance !== "") {
 				response += `<h2>APPEARANCE</h2> ${this.pilot.text_appearance} </hr>`;
 			}
 
-			if (this.pilot.history !== ""){
+			if (this.pilot.history !== "") {
 				response += `<h2>HISTORY</h2> ${this.pilot.history} </hr>`;
 			}
 
-			response += "</p>"
+			response += "</p>";
 
 			return response;
-		}
+		},
 	},
 };
 </script>

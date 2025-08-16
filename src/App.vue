@@ -4,16 +4,32 @@
 		<Sidebar :animate="animate" :class="{ animate: animate }" />
 	</div>
 	<div id="router-view-container">
-		<router-view :animate="animate" :initial-slug="initialSlug" :missions="missions" :events="events"
-			:pilots="pilots" :clocks="clocks" :reserves="reserves" />
+		<router-view
+			:animate="animate"
+			:initial-slug="initialSlug"
+			:missions="missions"
+			:events="events"
+			:pilots="pilots"
+			:clocks="clocks"
+			:reserves="reserves"
+		/>
 	</div>
-	<svg style="visibility: hidden; position: absolute" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
-		version="1.1">
+	<svg
+		style="visibility: hidden; position: absolute"
+		width="0"
+		height="0"
+		xmlns="http://www.w3.org/2000/svg"
+		version="1.1"
+	>
 		<defs>
 			<filter id="round">
 				<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
-				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -5"
-					result="goo" />
+				<feColorMatrix
+					in="blur"
+					mode="matrix"
+					values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -5"
+					result="goo"
+				/>
 				<feComposite in="SourceGraphic" in2="goo" operator="atop" />
 			</filter>
 		</defs>
@@ -51,8 +67,12 @@ export default {
 	},
 	created() {
 		this.setTitleFavicon(Config.defaultTitle + " MISSION BRIEFING", Config.icon);
-		this.importMissions(import.meta.glob("@/assets/missions/*.md", { query: '?raw', import: 'default' }));
-		this.importEvents(import.meta.glob("@/assets/events/*.md", { query: '?raw', import: 'default' }));
+		this.importMissions(
+			import.meta.glob("@/assets/missions/*.md", { query: "?raw", import: "default" })
+		);
+		this.importEvents(
+			import.meta.glob("@/assets/events/*.md", { query: "?raw", import: "default" })
+		);
 		this.importClocks(import.meta.glob("@/assets/clocks/*.json"));
 		this.importReserves(import.meta.glob("@/assets/reserves/*.json"));
 		this.importPilots(import.meta.glob("@/assets/pilots/*.json"));
@@ -63,10 +83,10 @@ export default {
 	methods: {
 		setTitleFavicon(title, favicon) {
 			document.title = title;
-			let headEl = document.querySelector('head');
-			let faviconEl = document.createElement('link');
-			faviconEl.setAttribute('rel', 'shortcut icon');
-			faviconEl.setAttribute('href', favicon);
+			let headEl = document.querySelector("head");
+			let faviconEl = document.createElement("link");
+			faviconEl.setAttribute("rel", "shortcut icon");
+			faviconEl.setAttribute("href", favicon);
 			headEl.appendChild(faviconEl);
 		},
 		async importMissions(files) {
@@ -82,7 +102,7 @@ export default {
 			});
 			this.missions = this.missions.sort(function (a, b) {
 				return b["slug"] - a["slug"];
-			})
+			});
 		},
 		async importEvents(files) {
 			let filePromises = Object.keys(files).map(path => files[path]());

@@ -40,8 +40,8 @@ export default {
 	},
 	methods: {
 		selectEvent() {
-			this.$emit('select-event', this.event)
-		}
-	}
-}
+			this.$emit("select-event", this.event);
+		},
+	},
+};
 </script>

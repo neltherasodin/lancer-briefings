@@ -1,10 +1,11 @@
 <template>
 	<div class="segmented-progressbar">
 		<div
-		  v-for="index in value"
-		  :key="index"
-		  class="item"
-		  :style="'background-color: ' + color"></div>
+			v-for="index in value"
+			:key="index"
+			class="item"
+			:style="'background-color: ' + color"
+		></div>
 		<div v-for="index in max - value" :key="index" class="item"></div>
 	</div>
 </template>

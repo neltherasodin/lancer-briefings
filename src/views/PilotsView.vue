@@ -1,5 +1,10 @@
 <template>
-	<div class="section-content-container" :class="{ animate: animateView }" :style="{ 'animation-delay': animationDelay }" id="pilots">
+	<div
+		class="section-content-container"
+		:class="{ animate: animateView }"
+		:style="{ 'animation-delay': animationDelay }"
+		id="pilots"
+	>
 		<div class="pilot-list-container">
 			<Pilot v-for="item in pilots" :key="item.callsign" :pilot="item" :animate="animate" />
 		</div>
@@ -7,9 +12,8 @@
 </template>
 
 <script>
-import { VueMarkdownIt } from '@f3ve/vue-markdown-it';
+import { VueMarkdownIt } from "@f3ve/vue-markdown-it";
 import Pilot from "@/components/Pilot.vue";
-
 
 export default {
 	components: {
@@ -45,8 +49,8 @@ export default {
 			if (statusAnimated === null) {
 				window.sessionStorage.setItem("statusAnimated", true);
 			}
-		}
-	}
+		},
+	},
 };
 </script>
 
@@ -63,7 +67,7 @@ export default {
 }
 
 .pilot-list-container {
-	height:calc(100vh - 96px);
+	height: calc(100vh - 96px);
 }
 
 .section-content-container {

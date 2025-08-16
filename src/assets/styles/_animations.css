@@ -127,15 +127,15 @@
 
 /* HEADER + SIDEBAR */
 header[class*="animate"] {
-	position:relative;
-	z-index:100;
+	position: relative;
+	z-index: 100;
 	animation: slideInFromLeft 0.3s ease-out;
 }
 
 .sidebar-page[class*="animate"] #sidebar {
 	display: flex;
-	position:relative;
-	z-index:100;
+	position: relative;
+	z-index: 100;
 	background-color: var(--primary-color);
 	animation: slideInDownSidebar 0.3s ease-out 1.2s;
 	animation-fill-mode: both;
@@ -176,8 +176,8 @@ header[class*="animate"] div.location-info {
 .section-content-container[class*="animate"]#pilots,
 section.section-container[class*="animate"]#events,
 section.section-container[class*="animate"]#events-logs {
-	position:relative;
-	z-index:0;
+	position: relative;
+	z-index: 0;
 	animation: slideInFromTopFade 0.5s ease-in-out;
 	animation-fill-mode: both;
 }

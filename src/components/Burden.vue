@@ -2,10 +2,7 @@
 	<div class="burden-container">
 		<div class="burden-body">
 			<div class="burden">
-				<DoughnutChart
-				  :chartData="testData"
-				  :options="options"
-				  class="chart" />
+				<DoughnutChart :chartData="testData" :options="options" class="chart" />
 			</div>
 			<div class="burden-header">
 				<h2 class="burden-subtitle">Burden</h2>
