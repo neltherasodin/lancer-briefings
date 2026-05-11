@@ -1,11 +1,7 @@
-version: '3.8'
 services:
   lancer-briefings:
-    image: node:lts-alpine
-    working_dir: /app
-    volumes:
-      - ./:/app
+    container_name: lancer-briefings
+    build: .
     ports:
-      - "8013:5173" 
-    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+      - "8019:80"
     restart: unless-stopped
