@@ -10,7 +10,11 @@ export default defineConfig({
 		vue(),
 		vueDevTools(),
 		viteCompression({
-			algorithm: "brotliCompress",
+    		algorithm: "brotliCompress",
+    		ext: ".br",
+    		// Forza il plugin a non tentare di creare path strani
+    		filter: /\.(js|css|html|svg|json|ttf|woff|woff2|eot)$/i,
+    		threshold: 1024, // Comprimi solo file sopra 1KB
 		}),
 	],
 	base: "./",
